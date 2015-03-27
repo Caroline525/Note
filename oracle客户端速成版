@@ -1,0 +1,27 @@
+1.拷贝文件（拷到共享内存不写磁盘速度快）
+ocean24:/opt # cd /dev/shm/
+ocean24:/dev/shm # tar -cf yangjie.tar /opt/oracle
+tar: Removing leading `/' from member names
+ocean24:/dev/shm # l
+total 4327124
+drwxrwxrwt  2 root root         80 Mar 27 21:21 ./
+drwxr-xr-x 18 root root       6020 Feb 25 09:15 ../
+-rwxr-xr-x  1 root root         32 Feb 25 01:01 sem.achkfirstsem*
+-rw-r--r--  1 root root 4430970880 Mar 27 21:21 yangjie.tar
+ocean24:/dev/shm # vi yangjie.tar
+ocean24:/dev/shm # vi yangjie.tar
+ocean24:/dev/shm # scp yangjie.tar root@10.136.93.189:/opt
+2.复制环境变量并检测：
+linux189:/opt # cd oracle/
+linux189:/opt/oracle # ll
+total 8
+drwxr-xr-x 5 oracle oinstall 4096 Mar  3  2014 OraBase
+drwxrwx--- 5 oracle oinstall 4096 Mar  3  2014 oraInventory
+linux189:/opt/oracle # su - oracle
+linux189:/opt/oracle # vi /etc/passwd
+linux189:/opt/oracle # su - oracle
+oracle@linux189:~> vi .profile
+oracle@linux189:~> source .profile
+oracle@linux189:~> cd $ORACLE_HOME
+oracle@linux189:~/OraBase/OraHome> sqlldr
+

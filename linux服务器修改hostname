@@ -1,0 +1,17 @@
+linux:~ # export HOSTNAME="linux187"
+linux:~ # echo $HOSTNAME > /etc/HOSTNAME
+linux:~ # vi /etc/hosts
+linux:~ # /etc/init.d/boot.localnet start
+Using boot-specified hostname 'linux187'
+Setting up hostname 'linux187'                                                                                                             done
+Setting up loopback interface     lo        
+    lo        IP address: 127.0.0.1/8   
+              IP address: 127.0.0.2/8   
+                                                                                                                                           done
+linux:~ # exit
+logout
+Connection to 10.136.93.187 closed.
+ocean24:/opt/huawei/universe/client # ssh root@10.136.93.187
+Password: 
+Last login: Fri Mar 27 10:01:35 2015 from 10.136.92.66
+linux187:~ # 
